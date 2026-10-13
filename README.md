@@ -16,7 +16,9 @@ I decided to group media by category (two on a line on wider screens).
 
 ! I want click, right click and long press to open images in full screen so users cannot download them. Block default behaviour first.
 
-The second image of my UI/UX design work for Zorevia was previously quite long - 11 screens side by side. I re-edited the image on Canva to contain 5 screens instead and added a matching background colour. The image is more legible and focused this way 
+The second image of my UI/UX design work for Zorevia was previously quite long - 11 screens side by side. I re-edited the image on Canva to contain 5 screens instead and added a matching background colour. The image is more legible and focused this way
+
+clicking an image or video makes it fullscreen
 
 
 
