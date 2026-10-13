@@ -20,8 +20,7 @@ The second image of my UI/UX design work for Zorevia was previously quite long -
 
 clicking an image or video makes it fullscreen
 
-
-
+! update fullscreen implementation (it takes the entire device into fullscreen mode)
 
 
 

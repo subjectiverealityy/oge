@@ -41,6 +41,7 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 8px; /* spacing for text + icon buttons */
   min-height: 44px;
   padding: 0 16px;
   color: #e5e7eb;
@@ -60,6 +61,11 @@ main {
 .intro__button--icon {
   width: 44px;
   font-size: 1.3rem;
+}
+
+.nav__button {
+  min-height: 36px;
+  font-weight: 400;
 }
 
 .intro__button--icon:hover, .intro__button:hover, .nav__button:hover {
@@ -109,7 +115,7 @@ main {
   gap: 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
   .footer__wrapper {
     padding-bottom: 15px;
     overflow-x: auto;
