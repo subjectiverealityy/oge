@@ -22,6 +22,8 @@ clicking an image or video makes it fullscreen
 
 ! update fullscreen implementation (it takes the entire device into fullscreen mode)
 
+! add VSCode, MUI, shadcn, Zustand, RTK Query to resume
+
 
 
 

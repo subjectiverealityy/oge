@@ -314,7 +314,7 @@ img, video {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.media__paragraph {
+.media__paragraph, .media__list {
   margin-top: 14px;
 
   color: #bfc4ce;
