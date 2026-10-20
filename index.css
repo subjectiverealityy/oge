@@ -24,16 +24,43 @@ body {
       #292929
     );
 }
+/* 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(120, 140, 255, 0.28), transparent 35%),
+    radial-gradient(circle at 85% 65%, rgba(255, 140, 200, 0.2), transparent 35%),
+    radial-gradient(circle at 45% 100%, rgba(80, 220, 200, 0.18), transparent 40%);
+} */
 
 main {
   width: 100%;
   position: fixed;
   top: 70px;
-  bottom: 100px;
+  bottom: 108px;
   left: 0;
   overflow-y: auto;
   scroll-behavior: smooth;
 }
+
+.media__divider {
+  height: 2px;
+  margin: 18px 0 4px;
+  transform: scaleY(0.5);
+  transform-origin: center;
+  opacity: 0.2;
+}
+
+/* .media__divider {
+  height: 1px;
+  margin: 16px 0 0;
+  border: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+} */
 
 
 
@@ -91,6 +118,9 @@ main {
   align-items: center;
   padding: 16px 24px;
   background: rgba(35, 35, 40, 0.92);
+  background: #292929EB; /* rgba(41, 41, 41, 0.92) */
+  background: #303030EB;
+  /* background: rgba(255, 255, 255, 0.09); */
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -105,6 +135,9 @@ main {
   bottom: 0;
   padding: 14px 10px 10px;
   background: rgba(35, 35, 40, 0.96);
+  background: #292929EB; /* rgba(41, 41, 41, 0.92) */
+  background: #303030EB;
+  /* background: rgba(255, 255, 255, 0.09); */
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -161,7 +194,7 @@ main {
 
 .intro__title {
   max-width: 850px;
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   /* font-size: clamp(2rem, 9vw, 3rem); */
   font-weight: 700;
   line-height: 1.15;
@@ -246,6 +279,22 @@ main {
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
   scroll-margin-top: 20px;
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.media__card {
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.22), transparent 45%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04));
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-top-color: rgba(255, 255, 255, 0.45);
+  border-left-color: rgba(255, 255, 255, 0.3);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .media__image, .media__video {
@@ -262,6 +311,32 @@ img, video {
   max-height: 350px;
   object-fit: contain;
 }
+
+/* ** Collapse into intro__link later. For now, I want ship uncompleted code that's not as polished as I'd like yet, in order to test the live website. */
+.media__paragraph a,
+.media__list a {
+  color: #e5e7eb;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  padding-bottom: 1px;
+  transition: color 180ms ease, border-color 180ms ease;
+}
+
+.media__paragraph a:hover,
+.media__list a:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.media__paragraph a:focus-visible,
+.media__list a:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* ** */
 
 @media (max-width: 700px) {
   .media__wrapper {
@@ -323,3 +398,140 @@ img, video {
   overflow-wrap: anywhere;
 }
 
+.media__list {
+  padding-left: 20px;
+}
+
+
+
+
+.modal {
+  width: min(100% - 32px, 640px);
+  max-height: 85vh;
+  margin: auto;
+  padding: 0;
+  color: #e5e7eb;
+  background: #2a2a2a;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.modal[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+.modal__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: #e5e7eb;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.modal__close:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.modal__body {
+  padding: 8px 24px 24px;
+  overflow-y: auto;
+}
+
+.modal__paragraph,
+.modal__list {
+  margin-top: 14px;
+  color: #bfc4ce;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.modal__list {
+  padding-left: 22px;
+}
+
+
+
+
+
+.media__details {
+  margin-top: 16px;
+  color: #e5e7eb;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.14), transparent 50%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-top-color: rgba(255, 255, 255, 0.32);
+  border-left-color: rgba(255, 255, 255, 0.22);
+  border-radius: 12px;
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.04);
+  transition:
+    background-color 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.media__details[open] {
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.18), transparent 50%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.03));
+  border-color: rgba(255, 255, 255, 0.2);
+  border-top-color: rgba(255, 255, 255, 0.4);
+  border-left-color: rgba(255, 255, 255, 0.28);
+}
+
+.media__heading {
+  padding: 12px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: background-color 180ms ease;
+}
+
+.media__heading:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.media__details[open] .media__heading {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.media__description {
+  padding: 0 16px 13px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
