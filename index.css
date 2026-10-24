@@ -427,7 +427,6 @@ img, video {
   font-weight: 600;
   object-fit: contain;
   background: rgba(255, 255, 255, 0.08);
-  border: 1px dashed rgba(255, 255, 255, 0.3); /* dashed = placeholder; remove when the real logo is in */
   border-radius: 12px;
 }
 
