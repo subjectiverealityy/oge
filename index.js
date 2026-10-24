@@ -1,5 +1,5 @@
 const SKILLS_HASH = "#skills";
-const EMAIL = "subjectiverealityy@gmail.com";
+const EMAIL = "oge.oriana.onuora@gmail.com";
 
 const skillsModal = document.getElementById("skills-modal");
 const skillsModalClose = document.getElementById("skills-modal-close");
