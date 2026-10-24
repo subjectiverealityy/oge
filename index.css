@@ -796,6 +796,23 @@ img, video {
   }
 }
 
+/* phones: 3/4 of the card padding */
+@media (max-width: 560px) {
+  .work__card {
+    padding: 18px;
+  }
+
+  .media__card {
+    padding: 15px;
+  }
+
+  .js .work__toggle {
+    width: calc(100% + 36px);
+    margin: 2px -18px -18px;
+    padding: 0 18px;
+  }
+}
+
 
 
 
