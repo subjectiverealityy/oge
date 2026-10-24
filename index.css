@@ -470,7 +470,7 @@ img, video {
   gap: 14px;
   padding: 16px 0 0;
   color: #d4d6dc;
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1.7;
   border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
@@ -481,7 +481,7 @@ img, video {
 /* italic note that follows a list, separate from the bullets */
 .work__note {
   color: #a1a1aa; /* same grey as the nav links */
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-style: italic;
   line-height: 1.7;
 }
@@ -635,10 +635,10 @@ img, video {
   gap: 6px;
 }
 
-/* larger, brighter reading text for the work cards and the App Landing Page note */
+/* brighter reading text for the work cards and the App Landing Page note */
 .work__card .media__list, .project__note .media__paragraph {
   color: #d4d6dc;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 /* App Landing Page note: a step smaller than the work cards */
