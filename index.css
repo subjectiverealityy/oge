@@ -699,6 +699,19 @@ img, video {
   gap: 8px;
 }
 
+/* no divider under the images, like the Zorevia card */
+.work__media + .work__list {
+  padding-top: 0;
+  border-top: none;
+}
+
+/* quiet captions, so they don't compete with the card text */
+.work__figure .media__caption {
+  color: #8f9097;
+  font-size: 0.78rem;
+  font-weight: 400;
+}
+
 /* image carousels (Fronet card): swipe or scroll on any device, buttons and dots when JS runs */
 .carousel__wrapper {
   position: relative;
