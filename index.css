@@ -656,7 +656,7 @@ img, video {
 }
 
 /* ** same treatment as intro__link in the old site */
-.media__paragraph a, .project__link {
+.media__paragraph a, .ai__paragraph a, .project__link {
   color: #e5e7eb;
   font-weight: 500;
   text-decoration: none;
@@ -665,12 +665,12 @@ img, video {
   transition: color 180ms ease, border-color 180ms ease;
 }
 
-.media__paragraph a:hover, .project__link:hover {
+.media__paragraph a:hover, .ai__paragraph a:hover, .project__link:hover {
   color: #ffffff;
   border-color: #ffffff;
 }
 
-.media__paragraph a:focus-visible, .project__link:focus-visible {
+.media__paragraph a:focus-visible, .ai__paragraph a:focus-visible, .project__link:focus-visible {
   outline: 2px solid #ffffff;
   outline-offset: 4px;
   border-radius: 2px;
