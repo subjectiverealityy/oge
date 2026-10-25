@@ -215,10 +215,10 @@
         <ul class="work__list">
           <li>Developed a Financier web app for partners to get information on projected returns, WiFi network preformance metrics, anonymised subscriber metrics (e.g. internet usage), and more.</li>
           <li>Digital reports of operational data were provided to inform the app's design. I translated them into a low-fidelity Figma wireframe of a proposed content layout and shared it for review, then used the wireframe as the basis for an interactive UI/UX design prototype that was also reviewed and served as the design base for the web app.</li>
-          <li>Developed a demo application (no database) in React following the approved design. It was presented to prospective users for feedback, and I made updates based on their feedback. API development by the backend developers and API integration is ongoing.</li>
+          <li>Developed a demo application (React frontend, no database) following the approved design. It was presented to prospective users for feedback, and I made updates based on their feedback. API development by the backend developers and API integration is ongoing.</li>
           <li>Customised their network platform's captive portal (the page that lets users connect to public WiFi).</li>
         </ul>
-        <p class="work__note">Their network platform allowed custom portal uploads and provided a downloadeable template codebase which contained code that already connected it to the internet hardware. I researched which parts should not be altered (to avoid breaking the connection), then updated the UI to match their previous solution, which was only customisable via an editor with limited design options. I used that as a base then added external links, a timed skippable ad, and integrated third-party analytics.</p>
+        <p class="work__note">Their network platform allowed custom portal uploads and provided a downloadeable template codebase for this which contained code that already connected it to the internet hardware. I researched what parts should not be altered to avoid breaking the connection, then updated the UI to match their previous solution which was only customisable via an editor with limited design options. I used that as a base then added external links, a timed skippable ad, and integrated third-party analytics.</p>
         <button type="button" class="work__toggle" aria-expanded="false" data-card-toggle>
           <span class="work__toggle-label">Show 4 more</span>
           <span class="work__toggle-chevron" aria-hidden="true"></span>
@@ -263,7 +263,7 @@
         </div>
         <ul class="media__list">
           <li>Designed 20+ mobile app screens in Figma.</li>
-          <li>Translated a PRD into wireframe sketches on paper with supporting notes, imported screenshots into the Figma canvas to use as design inspiration (from an existing ed-tech app and the branding team's documentation), then designed screens using reusable styles and components, made iterations based on the team's feedback, and handed over finalised designs to the mobile developer.</li>
+          <li>Translated a PRD into wireframe sketches on paper with supporting notes, imported screenshots (from an existing ed-tech app and the branding team's documentation) into the Figma canvas to use as design inspiration, then designed screens using reusable styles and components, made iterations based on the team's feedback, and handed over finalised designs to the mobile developer.</li>
           <li>Designed and developed a waitlist landing page.</li>
         </ul>
         <button type="button" class="work__toggle" aria-expanded="false" data-card-toggle>
@@ -308,17 +308,17 @@
         <ul class="project__list">
           <li>
             <!-- published prototype link -->
+            <a href="https://claude.ai/public/artifacts/a7487868-c678-4c20-aa87-0e9ceb420925" class="project__link" target="_blank" rel="noopener noreferrer">
+              Expenses Tracker
+              <i class="fa-solid fa-arrow-up-right-from-square project__link-icon" aria-hidden="true"></i>
+            </a>
+            <!-- published prototype link -->
             <a href="https://claude.ai/artifact/V9jPt53QWhQbqVrhknCCP1" class="project__link" target="_blank" rel="noopener noreferrer">
               Outstanding Payments Tracker
               <i class="fa-solid fa-arrow-up-right-from-square project__link-icon" aria-hidden="true"></i>
             </a>
           </li>
           <li>
-            <!-- published prototype link -->
-            <a href="https://claude.ai/public/artifacts/a7487868-c678-4c20-aa87-0e9ceb420925" class="project__link" target="_blank" rel="noopener noreferrer">
-              Expenses Tracker
-              <i class="fa-solid fa-arrow-up-right-from-square project__link-icon" aria-hidden="true"></i>
-            </a>
           </li>
         </ul>
       </div>
@@ -396,7 +396,7 @@
           <h3 class="section__subtitle">In development</h3>
           <p class="ai__paragraph">AI-generated code is not always developer-friendly. I have seen it use naming that is not human-readable (like double-letter variables), generate poorly-written CSS that would be difficult for a human to maintain long-term, remove useful lines of code, and more. I follow these steps:</p>
           <ol class="ai__steps">
-            <li>Prompt one small change at a time.</li>
+            <li>Prompt small changes at a time.</li>
             <li>Review the generated code in the diff. There is usually something to edit, add or remove.</li>
             <li>Make the edits manually (or add context to the prompt if it was misinterpeted) and only commit code that has been read through.</li>
           </ol>
