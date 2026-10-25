@@ -683,6 +683,152 @@ img, video {
   }
 }
 
+/* screenshots inside the Ndara.ai and Fronet cards */
+.work__media {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 14px;
+  margin-top: 4px;
+}
+
+.work__figure {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* image carousels (Fronet card): swipe or scroll on any device, buttons and dots when JS runs */
+.carousel__wrapper {
+  position: relative;
+}
+
+.carousel__track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  border-radius: 10px;
+}
+
+.js .carousel__track {
+  scrollbar-width: none; /* the buttons and dots replace the scrollbar */
+}
+
+.js .carousel__track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel__track:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.carousel__track .media__image {
+  aspect-ratio: 16 / 10;
+  flex: 0 0 100%;
+  grid-template: minmax(0, 1fr) / minmax(0, 1fr); /* keeps the grid cell inside the 16:10 box, so tall screenshots aren't cropped */
+  scroll-snap-align: start;
+  border-radius: 0;
+}
+
+.carousel__track img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: contain; /* shows each screenshot whole, whatever its shape */
+}
+
+.carousel__button--prev, .carousel__button--next {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 50%;
+  display: none;
+  place-items: center;
+  color: #f3f4f6;
+  font-size: 0.75rem;
+  background: rgba(26, 26, 28, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 50%;
+  backdrop-filter: blur(8px);
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.carousel__button--prev {
+  left: 8px;
+}
+
+.carousel__button--next {
+  right: 8px;
+}
+
+.js .carousel__button--prev, .js .carousel__button--next {
+  display: grid;
+}
+
+.carousel__button--prev:hover, .carousel__button--next:hover {
+  background: rgba(37, 37, 39, 0.9);
+}
+
+.carousel__button--prev:disabled, .carousel__button--next:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.carousel__button--prev:focus-visible, .carousel__button--next:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.carousel__dots:empty {
+  display: none;
+}
+
+.carousel__dot {
+  width: 6px;
+  height: 6px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.carousel__dot[aria-current="true"] {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+/* phones: 3/4 of the card padding */
+@media (max-width: 560px) {
+  .work__card {
+    padding: 18px;
+  }
+
+  .media__card {
+    padding: 15px;
+  }
+
+  .work__media {
+    grid-template-columns: 1fr;
+  }
+
+  .js .work__toggle {
+    width: calc(100% + 36px);
+    margin: 2px -18px -18px;
+    padding: 0 18px;
+  }
+}
+
 
 
 
@@ -793,23 +939,6 @@ img, video {
 @media (max-width: 700px) {
   .ai__grid {
     grid-template-columns: 1fr;
-  }
-}
-
-/* phones: 3/4 of the card padding */
-@media (max-width: 560px) {
-  .work__card {
-    padding: 18px;
-  }
-
-  .media__card {
-    padding: 15px;
-  }
-
-  .js .work__toggle {
-    width: calc(100% + 36px);
-    margin: 2px -18px -18px;
-    padding: 0 18px;
   }
 }
 

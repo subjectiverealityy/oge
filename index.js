@@ -102,6 +102,55 @@ cardToggles.forEach((button) => {
 
 
 
+// image carousels: previous/next buttons and dots
+
+document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+  const track = carousel.querySelector(".carousel__track");
+  const slides = track.children;
+  const previousButton = carousel.querySelector("[data-carousel-prev]");
+  const nextButton = carousel.querySelector("[data-carousel-next]");
+  const dotsWrapper = carousel.parentElement.querySelector("[data-carousel-dots]");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const currentIndex = () => Math.round(track.scrollLeft / track.clientWidth);
+
+  function goTo(index) {
+    track.scrollTo({
+      left: index * track.clientWidth,
+      behavior: reduceMotion ? "auto" : "smooth",
+    });
+  }
+
+  // one dot per image
+  const dots = Array.from(slides, (slide, index) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.className = "carousel__dot";
+    dot.setAttribute("aria-label", `Image ${index + 1} of ${slides.length}`);
+    dot.addEventListener("click", () => goTo(index));
+    dotsWrapper.append(dot);
+    return dot;
+  });
+
+  function update() {
+    const index = currentIndex();
+    previousButton.disabled = index === 0;
+    nextButton.disabled = index === slides.length - 1;
+    dots.forEach((dot, dotIndex) => {
+      dot.setAttribute("aria-current", String(dotIndex === index));
+    });
+  }
+
+  previousButton.addEventListener("click", () => goTo(currentIndex() - 1));
+  nextButton.addEventListener("click", () => goTo(currentIndex() + 1));
+  track.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+  update();
+});
+
+
+
+
 // media: no right-click menu ("Save image as…" / "Save video as…")
 
 document.addEventListener("contextmenu", (event) => {
