@@ -1079,7 +1079,7 @@ img, video {
 
 .modal__paragraph, .modal__list {
   color: #e5e7eb;
-  font-size: 0.95rem;
+  font-size: 0.9rem; /* same as the work card text */
   line-height: 1.7;
 }
 
