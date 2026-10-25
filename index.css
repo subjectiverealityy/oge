@@ -132,7 +132,7 @@ img, video {
 @media (max-width: 560px) {
   .header__inner {
     gap: 8px;
-    padding: 10px 0 12px;
+    padding: 10px 0 1px; /* the links' 36px tap height already adds space under the text, so this evens out the top and bottom */
   }
 
   .nav__wrapper {
