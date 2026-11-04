@@ -5,6 +5,7 @@ const skillsModal = document.getElementById("skills-modal");
 const skillsModalClose = document.getElementById("skills-modal-close");
 const skillsOpenLinks = document.querySelectorAll("[data-skills-open]");
 const copyEmailButtons = document.querySelectorAll("[data-copy-email]");
+const copyStatus = document.querySelector("[data-copy-status]");
 const cardToggles = document.querySelectorAll("[data-card-toggle]");
 
 
@@ -70,6 +71,7 @@ copyEmailButtons.forEach((button) => {
     try {
       await navigator.clipboard.writeText(EMAIL);
       label.textContent = "Copied";
+      copyStatus.textContent = "Email address copied";
     } catch {
       label.textContent = EMAIL; // clipboard blocked, so show the address instead
     }
@@ -77,6 +79,7 @@ copyEmailButtons.forEach((button) => {
 
     setTimeout(() => {
       label.textContent = originalText;
+      copyStatus.textContent = ""; // cleared so copying again is announced again
       button.classList.remove("is-copied");
     }, 2000);
   });

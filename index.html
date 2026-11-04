@@ -82,6 +82,7 @@
         </a>
         <button type="button" class="socials__email" data-copy-email title="Copy email">
           <span>oge.o.onuora@gmail.com</span>
+          <span class="visually-hidden">(copy email address)</span>
           <i class="fa-regular fa-copy" aria-hidden="true"></i>
         </button>
       </div>
@@ -465,22 +466,23 @@
 
     <!-- links -->
     <section id="contact" class="section__wrapper section__wrapper--last">
-      <h2 class="section__title">Links</h2>
+      <h2 class="section__title">Contact</h2>
       <div class="socials__wrapper">
-        <a href="https://wa.me/2348064640002" class="intro__button--icon" target="_blank" rel="noopener noreferrer" aria-label="Message me on WhatsApp">
-          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-        </a>
         <button type="button" class="socials__email" data-copy-email title="Copy email">
           <span>oge.o.onuora@gmail.com</span>
+          <span class="visually-hidden">(copy email address)</span>
           <i class="fa-regular fa-copy" aria-hidden="true"></i>
         </button>
       </div>
       <div class="socials__wrapper">
-        <a href="https://github.com/subjectiverealityy" class="intro__button--icon" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-          <i class="fa-brands fa-github" aria-hidden="true"></i>
+        <a href="https://wa.me/2348064640002" class="intro__button--icon" target="_blank" rel="noopener noreferrer" aria-label="Message me on WhatsApp">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
         </a>
         <a href="https://www.linkedin.com/in/ogechukwu-onuora" class="intro__button--icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
           <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+        </a>
+        <a href="https://github.com/subjectiverealityy" class="intro__button--icon" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
         </a>
         <!-- TODO: replace with your Contra profile link -->
         <!-- <a href="https://contra.com/" class="intro__button" target="_blank" rel="noopener noreferrer" aria-label="Contra profile">
@@ -490,6 +492,9 @@
     </section>
 
   </main>
+
+  <!-- announces "Email address copied" to screen readers -->
+  <p class="visually-hidden" role="status" data-copy-status></p>
 
   <!-- skillset modal, opens at /skills -->
   <dialog id="skills-modal" class="modal" aria-labelledby="skills-modal-title">
