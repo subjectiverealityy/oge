@@ -1055,6 +1055,54 @@ img, video {
   border-color: rgba(255, 255, 255, 0.3);
 }
 
+/* full screen image viewer */
+
+.media__image img {
+  cursor: zoom-in;
+}
+
+.media__image img:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: -2px; /* inside, so the rounded wrapper doesn't clip it */
+}
+
+.lightbox {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 16px;
+  background: transparent;
+  border: 0;
+  cursor: zoom-out;
+}
+
+.lightbox[open] {
+  display: grid;
+  place-items: center;
+}
+
+.lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+}
+
+.lightbox__image {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100vh - 32px);
+  max-height: calc(100dvh - 32px); /* leaves room for mobile browser bars */
+  border-radius: 10px;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
 .modal__body {
   display: flex;
   flex-direction: column;

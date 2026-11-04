@@ -151,6 +151,36 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
 
 
 
+// full screen images: click (or Enter/Space) to open, click anywhere or Escape to close
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = lightbox.querySelector(".lightbox__image");
+
+function openLightbox(image) {
+  lightboxImage.src = image.currentSrc || image.src;
+  lightboxImage.alt = image.alt;
+  lightbox.showModal();
+}
+
+document.querySelectorAll(".media__image img").forEach((image) => {
+  image.tabIndex = 0;
+  image.setAttribute("role", "button");
+  image.setAttribute("aria-haspopup", "dialog");
+
+  image.addEventListener("click", () => openLightbox(image));
+  image.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openLightbox(image);
+    }
+  });
+});
+
+lightbox.addEventListener("click", () => lightbox.close());
+
+
+
+
 // media: no right-click menu ("Save image as…" / "Save video as…")
 
 document.addEventListener("contextmenu", (event) => {
