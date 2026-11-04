@@ -1102,3 +1102,19 @@ img, video {
   top: 0.85em; /* middle of the first line (line-height 1.7) */
   background: rgba(255, 255, 255, 0.4);
 }
+
+/* larger screens: bigger reading text */
+@media (min-width: 701px) {
+  .work__list, .work__note, .media__caption,
+  .media__paragraph, .media__list,
+  .work__card .media__list, .project__note .media__paragraph,
+  .ai__paragraph, .ai__steps,
+  .modal__paragraph, .modal__list {
+    font-size: 1rem;
+  }
+
+  /* same ~11% step up as the text above */
+  .work__figure .media__caption {
+    font-size: 0.87rem;
+  }
+}
