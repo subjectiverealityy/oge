@@ -8,7 +8,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 90px; /* keeps anchored sections clear of the sticky header */
+  scroll-padding-top: 50px; /* keeps anchored sections clear of the sticky header */
 }
 
 body {
