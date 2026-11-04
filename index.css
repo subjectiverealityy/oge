@@ -1175,4 +1175,13 @@ img, video {
   .work__figure .media__caption {
     font-size: 0.87rem;
   }
+
+  .project__list {
+    font-size: 1.05rem;
+  }
+
+  /* these stay at their original size: Timelapse/Result captions, Figma card and certificate details */
+  .project__wrapper .media__caption, .media__card .media__paragraph {
+    font-size: 0.9rem;
+  }
 }
