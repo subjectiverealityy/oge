@@ -886,7 +886,7 @@ img, video {
   padding-left: 0;
   list-style: none;
   color: #bfc4ce;
-  font-size: 0.95rem;
+  font-size: 0.9rem; /* same as the paragraph above it */
   line-height: 1.7;
 }
 
@@ -1167,20 +1167,15 @@ img, video {
   .media__paragraph, .media__list,
   .work__card .media__list, .project__note .media__paragraph,
   .ai__paragraph, .ai__steps,
-  .modal__paragraph, .modal__list {
+  .modal__paragraph, .modal__list,
+  .project__list {
     font-size: 1rem;
   }
 
   /* same ~11% step up as the text above */
   .work__figure .media__caption {
     font-size: 0.87rem;
-  }
-
-  .project__list {
-    font-size: 1.05rem;
-  }
-
-  /* these stay at their original size: Timelapse/Result captions, Figma card and certificate details */
+  }  /* these stay at their original size: Timelapse/Result captions, Figma card and certificate details */
   .project__wrapper .media__caption, .media__card .media__paragraph {
     font-size: 0.9rem;
   }
